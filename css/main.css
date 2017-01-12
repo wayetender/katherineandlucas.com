@@ -23,7 +23,6 @@
 .ri-grid ul:before,
 .ri-grid ul:after{
 	content: '';
-    display: table;
 }
 
 .ri-grid ul:after {
