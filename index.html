@@ -13,6 +13,7 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic%7CLora%7CSacramento" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -87,36 +88,19 @@
             <span class="icon-icon-separator"></span>
                 <h1>Katherine <span class="amp">&amp;</span> Lucas</h1>
             <span class="icon-icon-separator"></span>
+               <h2>John's Backyard &mdash; August 32nd, 2016</h2>
+            <span class="icon-icon-separator"></span>
         </div>
       </div>
       <a href="#rsvp" data-scroll class="down-arrow ghost-btn">
             RSVP now
             </a>
     </section>
-
-    <nav class="navbar navbar-default navbar-top sticky-nav">
-          <div id="navbar" class="navbar-collapse collapse menu menu--prospero">
-              <ul class="nav navbar-nav">
-                  <li class="menu__item menu__item--current"><a href="#home" class="menu__link" data-scroll>Home</a>
-                  </li>
-                  <li><a href="#about" class="menu__link" data-scroll>Love Story</a>
-                  </li>
-                  <li><a href="#bridesmaid" class="menu__link" data-scroll>Bridesmaid</a>
-                  </li>
-                  <li><a href="#groomsmen" class="menu__link" data-scroll>Groomsmen</a>
-                  </li>
-                  <li><a href="#location" class="menu__link" data-scroll>Location</a>
-                  </li>
-                  <li><a href="#photos" class="menu__link" data-scroll>Photos</a>
-                  </li>
-                  <li><a href="#gifts" class="menu__link" data-scroll>Gifts</a>
-                  </li>
-                  <li><a href="#rsvp" class="menu__link" data-scroll>RSVP</a>
-                  </li>
-
-              </ul>
-          </div>
-    </nav>
+<nav class="navbar inlove-navbar inlove-navbar-sticky" id="myNav"><div class="container"><div class="navbar-header"><div class="container"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> </div></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-center"><li class="dropdown"><a href="home-1.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a></li><li class="dropdown"><a href="blog.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Story</a></li><li class="dropdown"><a href="gallery-masonry.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Wedding Info</a></li><li class="dropdown inlove-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accommodations</a></li>
+<li class="dropdown inlove-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transporation</a></li>
+<li class="dropdown inlove-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registry</a></li>
+<li class="dropdown inlove-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSVP</a></li>
+<li class=""></li></ul></div></div></nav>
 
     <div class="container">
       <!-- Example row of columns -->
@@ -225,21 +209,21 @@
             } );
 
             t=$(window).height();
-            $(".hero").height(t*0.8);
+            $(".hero").height(t);
             $(window).resize(function(){
                 var t=$(window).height();
-                $(".hero").height(t*0.8);
+                $(".hero").height(t);
             });
 
-            // $(window).bind('scroll', function () {
-            // if ($(window).scrollTop() > 0.81 * $(window).height()) {
-            //     $('#myNav').removeClass('navbar-top');
-            //     $('#myNav').addClass('navbar-fixed-top');
-            // } else {
-            //     $('#myNav').removeClass('navbar-fixed-top');
-            //     $('#myNav').addClass('navbar-top');
-            // }
-            // });  
+            $(window).bind('scroll', function () {
+            if ($(window).scrollTop() > 1.01 * $(window).height()) {
+                $('#myNav').removeClass('navbar-top');
+                $('#myNav').addClass('navbar-fixed-top');
+            } else {
+                $('#myNav').removeClass('navbar-fixed-top');
+                $('#myNav').addClass('navbar-top');
+            }
+            });  
           
           });
         </script>
