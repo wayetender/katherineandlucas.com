@@ -29,6 +29,11 @@
     </head>
     <body>
 
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+
     <section class="header hero" id="home">
       <div id="ri-grid" class="ri-grid ri-grid-size-3">
         <img class="ri-loading-image" src="img/loading.gif"/>
@@ -108,7 +113,7 @@
 <li class="dropdown inlove-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSVP</a></li>
 <li class=""></li></ul></div></div></nav>
 
-<section id="ourstory" class="nicdark_section" style="background: url(&quot;img/ourstory.jpg&quot;) 50% 40px / cover fixed;">
+<section id="ourstory" class="nicdark_section" style="background: url(&quot;img/ourstory.jpg&quot;) 50% 40px / cover fixed; min-height:950px">
             <!--start nicdark_container-->
             <div class="nicdark_container nicdark_clearfix">
                 
@@ -327,6 +332,14 @@
             );
 
           });
+        </script>
+        <!-- Preloader -->
+        <script type="text/javascript">
+          $(window).on('load', function() { // makes sure the whole site is loaded 
+              $('#status').fadeOut(); // will first fade out the loading animation 
+              $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+              $('body').delay(350).css({'overflow':'visible'});
+            })
         </script>
     </body>
 </html>
