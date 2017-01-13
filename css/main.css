@@ -284,6 +284,16 @@ legend {
 .navbar .navbar-collapse {
   text-align: center; }
 
+#navbar-ghost {
+  display:none;
+  height:83px;
+  background-color:#79005E;
+}
+
+#navbar-ghost.ghost-active {
+  display:block;
+}
+
 .clear {
   clear: both; }
 

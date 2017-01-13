@@ -114,6 +114,8 @@
 <li class="dropdown pinknav-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSVP</a></li>
 <li class=""></li></ul></div></div></nav>
 
+<div id="navbar-ghost"></div>
+
 <section id="ourstory" class="ourstorysec_section" style="background: url(&quot;img/ourstory3.jpg&quot;) 50% 40px / cover fixed; min-height:750px">
             <!--start ourstorysec_container-->
             <div class="ourstorysec_container ourstorysec_clearfix">
@@ -357,6 +359,7 @@
             });
 
             var $nav = $('#myNav');
+            var $navghost = $('#navbar-ghost');
             var $window = $(window);
             var $animation_elements = $('.appear1, .appear2, .appear3');
 
@@ -364,9 +367,12 @@
               if ($window.scrollTop() > 1 * $window.height()) {
                   $nav.removeClass('navbar-top');
                   $nav.addClass('navbar-fixed-top');
+                  $navghost.addClass('ghost-active');
+
               } else {
                   $nav.removeClass('navbar-fixed-top');
                   $nav.addClass('navbar-top');
+                  $navghost.removeClass('ghost-active');
               }
 
               var window_height = $window.height();
