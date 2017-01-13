@@ -114,7 +114,7 @@
 <li class="dropdown pinknav-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSVP</a></li>
 <li class=""></li></ul></div></div></nav>
 
-<section id="ourstory" class="ourstorysec_section" style="background: url(&quot;img/ourstory3.jpg&quot;) 50% 40px / cover fixed; min-height:950px">
+<section id="ourstory" class="ourstorysec_section" style="background: url(&quot;img/ourstory3.jpg&quot;) 50% 40px / cover fixed; min-height:750px">
             <!--start ourstorysec_container-->
             <div class="ourstorysec_container ourstorysec_clearfix">
                 
@@ -178,7 +178,7 @@
           <div class="ourstorysec_space50"></div>
 
 
-          <div class="grid grid_4 nomargin ourstorysec_width100_ipadpotr">
+          <div class="grid grid_4 ourstorysec_width100_ipadpotr appear1">
               <div class="ourstorysec_focus ourstorysec_padding40 ourstorysec_sizing" style="background-image:url(img/venue1.jpg); background-size:cover;">
                   <div class="ourstorysec_focus ourstorysec_filter white ourstorysec_padding40 ourstorysec_sizing center">
                       <h3 class="grey">Ceremony</h3>
@@ -194,7 +194,7 @@
               </div>
           </div>
           
-          <div class="grid grid_4 nomargin ourstorysec_width100_ipadpotr">
+          <div class="grid grid_4 ourstorysec_width100_ipadpotr appear2">
               <div class="ourstorysec_focus ourstorysec_padding40 ourstorysec_sizing ourstorysec_bg_greydark" style="background-image:url(img/venue2.jpg); background-size:cover;">
                   <div class="ourstorysec_focus ourstorysec_filter white ourstorysec_padding40 ourstorysec_sizing center">
                       <h3 class="grey">Cocktail Hour</h3>
@@ -210,7 +210,7 @@
               </div>
           </div>
           
-          <div class="grid grid_4 nomargin ourstorysec_width100_ipadpotr">
+          <div class="grid grid_4 ourstorysec_width100_ipadpotr appear3">
               <div class="ourstorysec_focus ourstorysec_padding40 ourstorysec_sizing ourstorysec_bg_greydark" style="background-image:url(img/venue3.jpg); background-size:cover;">
                   <div class="ourstorysec_focus ourstorysec_filter white ourstorysec_padding40 ourstorysec_sizing center">
                       <h3 class="grey">Reception</h3>
@@ -356,14 +356,38 @@
                 $(".hero").height(t);
             });
 
-            $(window).bind('scroll', function () {
-            if ($(window).scrollTop() > 1 * $(window).height()) {
-                $('#myNav').removeClass('navbar-top');
-                $('#myNav').addClass('navbar-fixed-top');
-            } else {
-                $('#myNav').removeClass('navbar-fixed-top');
-                $('#myNav').addClass('navbar-top');
-            }
+            var $nav = $('#myNav');
+            var $window = $(window);
+            var $animation_elements = $('.appear1, .appear2, .appear3');
+
+            $window.bind('scroll resize', function () {
+              if ($window.scrollTop() > 1 * $window.height()) {
+                  $nav.removeClass('navbar-top');
+                  $nav.addClass('navbar-fixed-top');
+              } else {
+                  $nav.removeClass('navbar-fixed-top');
+                  $nav.addClass('navbar-top');
+              }
+
+              var window_height = $window.height();
+              var window_top_position = $window.scrollTop();
+              var window_bottom_position = (window_top_position + window_height);
+
+              $.each($animation_elements, function() {
+                var $element = $(this);
+                var element_height = $element.outerHeight();
+                var element_top_position = $element.offset().top;
+                var element_bottom_position = (element_top_position + element_height);
+
+                //check to see if this current container is within viewport
+                if ((element_bottom_position >= window_top_position) &&
+                    (element_top_position <= window_bottom_position)) {
+                  $element.addClass('in-view');
+                } else {
+                  $element.removeClass('in-view');
+                }
+              });
+
             });  
 
              // Add scrollspy to <body>
