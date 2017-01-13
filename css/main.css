@@ -162,10 +162,21 @@ body {
     position:absolute;
     left:50%; /* centers the loading animation horizontally one the screen */
     top:50%; /* centers the loading animation vertically one the screen */
-    background-image:url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif); /* path to your loading animation */
+    background-image:url(../img/loading.gif); /* path to your loading animation */
     background-repeat:no-repeat;
     background-position:center;
     margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+
+.bigsec h1 {
+    font-family: 'Cinzel', sans-serif;
+   /* color: #6c6975; */
+   color: #aaa7b1;
+    font-weight: 300;
+    text-align: center;
+    font-size: 38px;
+    margin: 0px;
+    padding:1px;
 }
 
 
@@ -569,6 +580,11 @@ legend {
 }
 
 
+.navbar-fixed-top {
+  transition: 2s !important;
+  -webkit-transition:  2s !important;
+  opacity: 0.7;
+}
 
 .pinknav-navbar-fixed + .pinknav-section:not(.pinknav-section-with-bg),
 .pinknav-navbar-fixed + .pinknav-section:not(.pinknav-section-with-solid-bg) {
