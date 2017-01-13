@@ -499,13 +499,14 @@ legend {
     font-weight: 100;
     margin-bottom: 30px; }
   .intro-content h2 {
-     text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 0px; 
-     font-family: "Lora", Georgia, serif;
-     font-size: 40px;
-     font-style: italic;
+     text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 0px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
     line-height: 70px;
     font-weight: 100;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
    }
 
 .ghost-btn {
@@ -588,6 +589,10 @@ legend {
   color: #AAA9A2;
   display: block;
   text-align: center; }
+
+.icon-icon-separator:before {
+    content: "\e905";
+}
 
 .icon-icon-separator {
   font-size: 15px;

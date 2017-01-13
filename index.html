@@ -97,18 +97,16 @@
       </div>
       <div class="intro-content">
         <div class="container">
-            <span class="icon-icon-separator"></span>
                 <h1>Katherine <span class="amp">&amp;</span> Lucas</h1>
             <span class="icon-icon-separator"></span>
-               <h2>John's Backyard &mdash; August 32nd, 2016</h2>
-            <span class="icon-icon-separator"></span>
+               <h2>June 32nd, 2016</h2>
         </div>
       </div>
       <a href="#rsvp" data-scroll class="down-arrow ghost-btn">
             RSVP now
             </a>
     </section>
-<nav class="navbar pinknav-navbar pinknav-navbar-sticky" id="myNav"><div class="container"><div class="navbar-header"><div class="container"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> </div></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-center"><li class="dropdown"><a href="home-1.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a></li><li class="dropdown"><a href="#ourstory" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Story</a></li><li class="dropdown"><a href="#wedding-info" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Wedding Info</a></li><li class="dropdown pinknav-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accommodations</a></li>
+<nav class="navbar pinknav-navbar pinknav-navbar-sticky" id="myNav"><div class="container"><div class="navbar-header"><div class="container"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> </div></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-center"><li class="dropdown"><a href="#home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a></li><li class="dropdown"><a href="#ourstory" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Story</a></li><li class="dropdown"><a href="#wedding-info" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Wedding Info</a></li><li class="dropdown pinknav-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accommodations</a></li>
 <li class="dropdown pinknav-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transporation</a></li>
 <li class="dropdown pinknav-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registry</a></li>
 <li class="dropdown pinknav-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RSVP</a></li>
@@ -409,12 +407,18 @@
                 // Store hash
                 var hash = this.hash;
                 console.log(hash);
-                console.log('blah?');
+                if (hash == "#home") {
+                    $('html, body').animate({
+                    scrollTop: 0
+                  }, 600, function(){
+                    window.location.hash = '#';
+                  });
+                }
 
                 // Using jQuery's animate() method to add smooth page scroll
                 // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
                 $('html, body').animate({
-                  scrollTop: $(hash).offset().top - 85
+                  scrollTop: $(hash).offset().top - 15
                 }, 600, function(){
              
                   // Add hash (#) to URL when done scrolling (default click behavior)
@@ -554,9 +558,9 @@ function initialize() {
 
     //start map options
     var mapOptions = {
-        zoom: 14,
+        zoom: 13,
         center: boston,
-        disableDefaultUI: true,
+        disableDefaultUI: false,
         scrollwheel: false,
         mapTypeControlOptions: {
           mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
@@ -690,6 +694,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
               $('#status').fadeOut(); // will first fade out the loading animation 
               $('#preloader').delay(550).fadeOut('slow'); // will fade out the white DIV that covers the website. 
               $('body').delay(550).css({'overflow':'visible'});
+              $(window).trigger('scroll');
             })
         </script>
     </body>
