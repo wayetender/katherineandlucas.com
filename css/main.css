@@ -1851,8 +1851,9 @@ z-index: 2;
     font-size: 28px;
   }
   #ourstory {
-    background-position: -180px 0px !important; 
-    
+    background: url(../img/ourstory3.jpg) 50% 40px !important;
+    background-position: -180px 0px !important;
+    background-size: cover !important;
   }
   .timing .time_circles > div > span[style] {
     font-size: 14px !important;
@@ -1888,8 +1889,9 @@ z-index: 2;
     font-size: 25px;
   }
   #ourstory {
-    background-position: -180px 0px !important; 
-    min-height:50px !important;
+    background: url(../img/ourstory3.jpg) 50% 40px /cover fixed !important;
+    background-position: -180px 0px !important;
+    background-size: cover !important;
   }
   #countdowntext {
     margin-left:0px !important;
