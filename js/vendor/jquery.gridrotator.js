@@ -331,6 +331,8 @@
 				case ( c_w < 480 ) : this.rows = this.options.w480.rows; this.columns = this.options.w480.columns; break;
 				case ( c_w < 768 ) : this.rows = this.options.w768.rows; this.columns = this.options.w768.columns; break;
 				case ( c_w < 1024 ) : this.rows = this.options.w1024.rows; this.columns = this.options.w1024.columns; break;
+				case ( c_w < 1200 ) : this.rows = this.options.w1200.rows; this.columns = this.options.w1200.columns; break;
+				case ( c_w < 1400 ) : this.rows = this.options.w1400.rows; this.columns = this.options.w1400.columns; break;
 				default : this.rows = this.options.rows; this.columns = this.options.columns; break;
 			}
 
