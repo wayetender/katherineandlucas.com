@@ -1850,6 +1850,10 @@ z-index: 2;
   .row p {
     font-size: 28px;
   }
+  #ourstory {
+    background-position: -180px 0px !important; 
+    
+  }
   .timing .time_circles > div > span[style] {
     font-size: 14px !important;
   }
@@ -1882,6 +1886,10 @@ z-index: 2;
   }
   .intro-content h2 {
     font-size: 25px;
+  }
+  #ourstory {
+    background-position: -180px 0px !important; 
+    min-height:50px !important;
   }
   #countdowntext {
     margin-left:0px !important;
