@@ -118,7 +118,7 @@
             <!--start ourstorysec_container-->
             <div class="ourstorysec_container ourstorysec_clearfix">
                 
-                <div class="grid grid_5" style="float:right">
+                <div id="ourstoryinfo" class="grid grid_5" style="float:right">
 
                     <div class="ourstorysec_space90"></div>
                     
@@ -145,7 +145,7 @@
 
     <section>
         <div class="row shiny">
-            <div class="col-sm-3" style="font-size: 50px;color: white;text-align: center;margin-top: 15px;font-family: 'Sacramento';margin-left: 120px;">
+            <div id="countdowntext" class="col-sm-3" style="font-size: 50px;color: white;text-align: center;margin-top: 15px;font-family: 'Sacramento';margin-left: 120px;">
                <p>Countdown <br> to the wedding</p>
             </div>
               <div class="col-sm-6" style="margin-left:80px">
@@ -285,13 +285,21 @@
               step    : 'random',
               maxStep: 2,
               preventClick: true,
+              w480    : {
+                rows  : 6,
+                columns : 2
+              },
               w320    : {
-                rows  : 3,
-                columns : 4
+                rows  : 6,
+                columns : 1
               },
               w240    : {
-                rows  : 3,
-                columns : 4
+                rows  : 6,
+                columns : 1
+              },
+              w1024  :{
+                rows: 4,
+                columns: 5
               }
             } );
 

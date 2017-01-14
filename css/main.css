@@ -4,6 +4,8 @@
    Author's custom styles
    ========================================================================== */
 
+
+
 .ri-grid{
 	margin: 30px auto 30px;
 	position: relative;
@@ -1823,4 +1825,104 @@ z-index: 2;
     padding:0px;
 }
 
+
+
+
+@media screen and (min-width:800px) and (max-width: 1150px) {
+  section.header {
+    background-color: #444;
+  }
+  .intro-content h1 {
+    font-size: 80px;
+  }
+  .intro-content h2 {
+    font-size: 25px;
+  }
+  .icon-icon-separator {
+    display: none;
+  }
+  #navbar a {
+    font-size: 1.1rem;
+  }
+  .ourstorysec_container {
+    width:100%;
+  } 
+  .row p {
+    font-size: 28px;
+  }
+  .timing .time_circles > div > span[style] {
+    font-size: 14px !important;
+  }
+  .timing .time_circles > div > h4 {
+    font-size: 12px !important;
+  }
+  .grid_12 {
+    width: 100%;
+  }
+  .grid_4 {
+    width: 31%;
+  }
+  .ourstorysec_padding40 {
+    padding: 10px !important;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+    section.header {
+    background-color: #444;
+  }
+  .intro-content h1 {
+    font-size: 60px;
+    line-height: 40px;
+  }
+  .grid_5 {
+    width: 95%;
+  }
+  .intro-content h2 {
+    font-size: 25px;
+  }
+  #countdowntext {
+    margin-left:0px !important;
+  }
+  .col-sm-6 {
+    margin-left: 10px !important;
+  }
+  .icon-icon-separator {
+    display: none;
+  }
+  #navbar a {
+    font-size: 1.1rem;
+  }
+  .ourstorysec_container {
+    width:100%;
+  } 
+  .row p {
+    font-size: 28px;
+  }
+  .timing .time_circles > div > span[style] {
+    font-size: 10px !important;
+  }
+  .timing .time_circles > div > h4 {
+    font-size: 10px !important;
+  }
+  .grid_12 {
+    width: 100%;
+  }
+  .grid_4 {
+      float:left;
+      clear: left;
+      width: auto;
+  }
+  #map-canvas {
+    display: none;
+  }
+  .ourstorysec_padding40 {
+    padding: 10px !important;
+  }
+  h2.white {
+    font-size: 18px;
+  }
+}
 
