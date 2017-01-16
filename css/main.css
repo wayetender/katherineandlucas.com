@@ -1792,7 +1792,7 @@ z-index: 2;
 
 
 .shiny {
-
+  margin-top: -15px;
   background-color: #94327E;
   background: linear-gradient(to bottom, #94327E 0%, black 100%);
 }
@@ -1919,15 +1919,25 @@ z-index: 2;
     section.header {
     background-color: #444;
   }
+  #registry-places img {
+    width:200px;
+    padding-bottom:30px;
+  }
+  #registry-places a {
+    padding:10px;
+  }
+  .form-control {
+    width:200px !important;
+  }
   .intro-content h1 {
-    font-size: 60px;
+    font-size: 60px !important;
     line-height: 40px;
   }
   .grid_5 {
     width: 95%;
   }
   .intro-content h2 {
-    font-size: 25px;
+    font-size: 18px;
   }
   #ourstory {
     background: url(../img/ourstory3.jpg) 50% 40px /cover fixed !important;
@@ -1959,7 +1969,7 @@ z-index: 2;
     font-size: 10px !important;
   }
   .grid_12 {
-    width: 100%;
+    width: 99%;
   }
   .grid_4 {
       float:left;
