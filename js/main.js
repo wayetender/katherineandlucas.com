@@ -146,7 +146,7 @@
         //START GOGOLE MAPS
 //map
 var map;
-var boston = new google.maps.LatLng(42.360170, -71.058581);
+var nj = new google.maps.LatLng(40.982052, -74.767682);
 
 var MY_MAPTYPE_ID = 'custom_style';
 
@@ -247,8 +247,8 @@ function initialize() {
 
     //start map options
     var mapOptions = {
-        zoom: 13,
-        center: boston,
+        zoom: 10,
+        center: nj,
         disableDefaultUI: false,
         scrollwheel: false,
         mapTypeControlOptions: {
@@ -277,19 +277,19 @@ function initialize() {
     
     //marker
     var image_2 = new google.maps.MarkerImage("img/icons/marker-church.png", null, null, null, new google.maps.Size(33,50));
-    var positionpin_2 = new google.maps.LatLng(42.367687, -71.081913);
+    var positionpin_2 = new google.maps.LatLng(40.982052, -74.767682);
     var marker_2 = new google.maps.Marker({
       position: positionpin_2,
       icon: image_2,
       map: map,
       flat: true,
-      title: 'Uluru (Ayers Rock)'
+      title: 'Crossed Keys'
     });
     
 
     //box
     var boxText_2 = document.createElement("div");
-    boxText_2.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/banners/map-church.jpg"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing ourstorysec_paddingright30 ourstorysec_bg_white"><h4><strong>Our Home</strong></h4><div class="ourstorysec_space20"></div><h5>CERIMONY</h5><div class="ourstorysec_space20"></div><div class="ourstorysec_divider center small"><span class="ourstorysec_bg_grey2 "></span></div><div class="ourstorysec_space20"></div><p>11:30 AM</p></div></div>';
+    boxText_2.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/banners/map-church.jpg"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing ourstorysec_paddingright30 ourstorysec_bg_white"><h4><strong>Venue</strong></h4><div class="ourstorysec_space20"></div><h5>Crossed Keys Estate</h5><div class="ourstorysec_space20"></div><div class="ourstorysec_divider center small"><span class="ourstorysec_bg_grey2 "></span></div><div class="ourstorysec_space20"></div><p>3:30 PM</p></div></div>';
 
     var marker_2_options = {
          content: boxText_2
@@ -326,7 +326,7 @@ function initialize() {
     
     //marker
     var image_4 = new google.maps.MarkerImage("img/icons/marker-hotel.png", null, null, null, new google.maps.Size(33,50));
-    var positionpin_4 = new google.maps.LatLng(42.357242, -71.067195);
+    var positionpin_4 = new google.maps.LatLng(41.068637, -74.749627);
     var marker_4 = new google.maps.Marker({
       position: positionpin_4,
       icon: image_4,
@@ -337,7 +337,7 @@ function initialize() {
 
     //box
     var boxText = document.createElement("div");
-    boxText.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/banners/map-hotel.jpg"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing  ourstorysec_paddingright30 ourstorysec_bg_white"><h4><strong>Boston Common</strong></h4><div class="ourstorysec_space20"></div><h5>Park</h5><div class="ourstorysec_space20"></div><div class="ourstorysec_divider center small"><span class="ourstorysec_bg_grey2 "></span></div><div class="ourstorysec_space20"></div><p><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></p></div></div>';
+    boxText.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/hotel.png"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing  ourstorysec_paddingright30 ourstorysec_bg_white"><h4><strong>Hotel</strong></h4><div class="ourstorysec_space20"></div><h5>Holiday Inn &amp; Suites Newton Sparta</h5><div class="ourstorysec_space20"></div><div class="ourstorysec_divider center small"><span class="ourstorysec_bg_grey2 "></span></div><div class="ourstorysec_space20"></div><p><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></p></div></div>';
 
     var marker_4_options = {
          content: boxText
@@ -368,10 +368,181 @@ function initialize() {
     //end 4
     
     
+    //START 5
+    
+    //marker
+    var image_4 = new google.maps.MarkerImage("img/icons/marker-hotel.png", null, null, null, new google.maps.Size(33,50));
+    var positionpin_4 = new google.maps.LatLng(40.689208, -74.178739);
+    var marker_4 = new google.maps.Marker({
+      position: positionpin_4,
+      icon: image_4,
+      map: map,
+      flat: true
+    });
     
 
+    //box
+    var boxText = document.createElement("div");
+    boxText.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/newark.jpeg"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing  ourstorysec_paddingright30 ourstorysec_bg_white"><h4><strong>Airport</strong></h4><div class="ourstorysec_space20"></div><h5>Newark Airort (EWR)</h5><div class="ourstorysec_space20"></div><div class="ourstorysec_divider center small"><span class="ourstorysec_bg_grey2 "></span></div><div class="ourstorysec_space20"></div><p><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></p></div></div>';
+
+    var marker_4_options = {
+         content: boxText
+        ,disableAutoPan: false
+        ,maxWidth: 0
+        ,pixelOffset: new google.maps.Size(40, -90)
+        ,zIndex: null
+        ,boxStyle: { 
+          opacity: 1,
+          width: "380px",
+          background: "#fff",
+         }
+        ,closeBoxMargin: "10px"
+        ,closeBoxURL: "img/icons/map-close.png"
+        ,infoBoxClearance: new google.maps.Size(1, 1)
+        ,isHidden: false
+        ,pane: "floatPane"
+        ,enableEventPropagation: false
+    };
+
+  var info_box_4 = new InfoBox(marker_4_options);
+    
+    google.maps.event.addListener(marker_4, 'click', function() {
+        info_box_4.open(map,marker_4);
+    });
+    
+    info_box_4.open(map,marker_4);
+    //end 4
+    
+    var start = new google.maps.LatLng(40.689208, -74.178739);
+    var end = new google.maps.LatLng(41.068637, -74.749627);
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+      suppressMarkers: true});
+    directionsDisplay.setMap(map);
+    directionsService.route({
+      origin: start,
+      destination: end,
+      waypoints: [],
+      optimizeWaypoints: true,
+      travelMode: 'DRIVING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        //directionsDisplay.setDirections(response);
+        var inBetween = google.maps.geometry.spherical.interpolate(start, end, 0.5);  
+        var midPointMarker = new google.maps.Marker({  
+            position: inBetween,  
+            map: map,
+            visible: false  // NB the marker is 'invisible'
+        });
+
+        var myRoute = response.routes[0].legs[0];
+        var points = []
+        for (var i = 0; i < myRoute.steps.length; i++) {
+            for (var j = 0; j < myRoute.steps[i].lat_lngs.length; j++) {
+                points.push(myRoute.steps[i].lat_lngs[j]);
+            }
+        }
+
+        polyline = new google.maps.Polyline({
+            path: points,
+            strokeColor: "#aaa",
+            strokeOpacity: 0.5,
+            strokeWeight: 6,
+            geodesic: true,
+            map: map
+        });
+
+        var stuDistance = calculateDistances(start, end);
+        var stuLabel = new Label();
+
+        stuLabel.bindTo('position', midPointMarker, 'position');
+        stuLabel.set('text', "<h4>" + stuDistance.miles + ' miles \n (' + myRoute.duration.text + ')</h4>');
+        console.log(stuDistance);
+        console.log(response);
+
+        // lets add event listeners
+        google.maps.event.addListener(polyline, 'mouseover', function() {
+            stuLabel.setMap(map);
+        });
+
+        google.maps.event.addListener(polyline, 'mouseout', function() {
+            stuLabel.setMap(null);
+        });
+        //directionsDisplay.setPanel(document.getElementById("directions-panel"));
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
 
 }
+
+function calculateDistances(start,end) {
+    var stuDistances = {};
+
+    stuDistances.metres = google.maps.geometry.spherical.computeDistanceBetween(start, end);    // distance in metres rounded to 1dp
+    stuDistances.km = Math.round(stuDistances.metres / 1000 *10)/10;    // distance in km rounded to 1dp
+    stuDistances.miles = Math.round(stuDistances.metres / 1000 * 0.6214 *10)/10;    // distance in miles rounded to 1dp
+
+    return stuDistances;
+}
+
+
+
+// Define the overlay, derived from google.maps.OverlayView
+function Label(opt_options) {
+    // Initialization
+    this.setValues(opt_options);
+
+    // Label specific
+    var span = this.span_ = document.createElement('div');
+    span.style.cssText = 'position: relative; left: 40px; top: -58px; ' +
+                         'white-space: nowrap; border: 1px solid #ccc; ' +
+                         'padding: 10px; background-color: white';
+
+    var div = this.div_ = document.createElement('div');
+    div.appendChild(span);
+    div.style.cssText = 'position: absolute; display: none';
+}
+Label.prototype = new google.maps.OverlayView;
+
+// Implement onAdd
+Label.prototype.onAdd = function() {
+    var pane = this.getPanes().overlayLayer;
+    pane.appendChild(this.div_);
+
+    // Ensures the label is redrawn if the text or position is changed.
+    var me = this;
+    this.listeners_ = [
+        google.maps.event.addListener(this, 'position_changed',
+            function() { me.draw(); }),
+        google.maps.event.addListener(this, 'text_changed',
+            function() { me.draw(); })
+    ];
+};
+
+// Implement onRemove
+Label.prototype.onRemove = function() {
+    this.div_.parentNode.removeChild(this.div_);
+
+    // Label is removed from the map, stop updating its position/text.
+    for (var i = 0, I = this.listeners_.length; i < I; ++i) {
+        google.maps.event.removeListener(this.listeners_[i]);
+    }
+};
+
+// Implement draw
+Label.prototype.draw = function() {
+    var projection = this.getProjection();
+    var position = projection.fromLatLngToDivPixel(this.get('position'));
+
+    var div = this.div_;
+    div.style.left = position.x + 'px';
+    div.style.top = position.y + 'px';
+    div.style.display = 'block';
+
+    this.span_.innerHTML = this.get('text').toString();
+};
+
 
 google.maps.event.addDomListener(window, 'load', initialize);
 //END GOOGLE MAPS    
