@@ -1899,7 +1899,8 @@ z-index: 2;
     font-size: 28px;
   }
   #ourstory {
-    background: url(../img/ourstory3small.jpg)  30% 98px / cover fixed; 
+    background: none;
+    background-color: white; 
     min-height:450px;
   }
   .timing .time_circles > div > span[style] {
@@ -1947,7 +1948,8 @@ z-index: 2;
     font-size: 18px;
   }
   #ourstory {
-    background: url(../img/ourstory3small.jpg)  30% 98px / cover fixed; 
+    background: none;
+    background-color: white; 
     min-height:450px;
   }
   #countdowntext {
