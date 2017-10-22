@@ -115,7 +115,7 @@
               }  // End if
             });
 
-            $('#ourstory').parallax("40%", 0.3);
+            $('#ourstory').parallax("30%", 0.3);
             $('#rsvp').parallax("50%", 0.3);
 
           

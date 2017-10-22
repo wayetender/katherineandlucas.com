@@ -1783,7 +1783,7 @@ z-index: 2;
 }
 
 #ourstory {
-  background: url('../img/ourstory3.jpg') 40% 98px / cover fixed; 
+  background: url('../img/ourstory3.jpg') 30% 98px / cover fixed; 
   min-height:750px;
 }
 #ourstory p {
@@ -1899,8 +1899,8 @@ z-index: 2;
     font-size: 28px;
   }
   #ourstory {
-    background: url(../img/ourstory3small.jpg) 50% 40px !important;
-    background-size: cover !important;
+    background: url(../img/ourstory3small.jpg)  30% 98px / cover fixed; 
+    min-height:450px;
   }
   .timing .time_circles > div > span[style] {
     font-size: 14px !important;
@@ -1947,8 +1947,8 @@ z-index: 2;
     font-size: 18px;
   }
   #ourstory {
-    background: url(../img/ourstory3small.jpg) 50% 40px /cover fixed !important;
-    background-size: cover !important;
+    background: url(../img/ourstory3small.jpg)  30% 98px / cover fixed; 
+    min-height:450px;
   }
   #countdowntext {
     margin-left:0px !important;
