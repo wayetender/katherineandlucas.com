@@ -1899,8 +1899,7 @@ z-index: 2;
     font-size: 28px;
   }
   #ourstory {
-    background: url(../img/ourstory3.jpg) 50% 40px !important;
-    background-position: -180px 0px !important;
+    background: url(../img/ourstory3small.jpg) 50% 40px !important;
     background-size: cover !important;
   }
   .timing .time_circles > div > span[style] {
@@ -1914,7 +1913,7 @@ z-index: 2;
   }
   .grid_4 {
     width: auto;
-    min-width: 98%;
+    min-width: 95%;
   }
   .ourstorysec_padding40 {
     padding: 10px !important;
@@ -1948,8 +1947,7 @@ z-index: 2;
     font-size: 18px;
   }
   #ourstory {
-    background: url(../img/ourstory3.jpg) 50% 40px /cover fixed !important;
-    background-position: -180px 0px !important;
+    background: url(../img/ourstory3small.jpg) 50% 40px /cover fixed !important;
     background-size: cover !important;
   }
   #countdowntext {
@@ -1983,7 +1981,7 @@ z-index: 2;
       float:left;
       clear: left;
       width: auto !important;
-    min-width: 98%;
+    min-width: 95%;
   }
   #date-movie {
     display: none;
