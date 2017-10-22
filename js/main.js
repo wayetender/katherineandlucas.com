@@ -247,7 +247,7 @@ function initialize() {
 
     //start map options
     var mapOptions = {
-        zoom: 10,
+        zoom: 9,
         center: nj,
         disableDefaultUI: false,
         scrollwheel: false,
