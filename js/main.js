@@ -252,7 +252,10 @@ function initialize() {
         disableDefaultUI: false,
         scrollwheel: false,
         mapTypeControlOptions: {
-          mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+          mapTypeIds: [google.maps.MapTypeId.SATELLITE, MY_MAPTYPE_ID]
+        },
+        zoomControlOptions: {
+            position: google.maps.ControlPosition.LEFT_CENTER
         },
         mapTypeId: MY_MAPTYPE_ID
     };
@@ -271,6 +274,10 @@ function initialize() {
 
     map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+      suppressMarkers: true});
+    directionsDisplay.setMap(map);
 
     
     //START 2
@@ -289,7 +296,7 @@ function initialize() {
 
     //box
     var boxText_2 = document.createElement("div");
-    boxText_2.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/banners/map-church.jpg"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing ourstorysec_paddingright30 ourstorysec_bg_white"><h4><strong>Venue</strong></h4><div class="ourstorysec_space20"></div><h5>Crossed Keys Estate</h5><div class="ourstorysec_space20"></div><div class="ourstorysec_divider center small"><span class="ourstorysec_bg_grey2 "></span></div><div class="ourstorysec_space20"></div><p>3:30 PM</p></div></div>';
+    boxText_2.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/banners/map-church.jpg"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing ourstorysec_paddingleft30 ourstorysec_bg_white"><h4><strong>Venue</strong></h4><div class="ourstorysec_space10"></div><h5>Crossed Keys Estate</h5><div class="ourstorysec_space10"></div><div class="ourstorysec_divider center small"><span class="ourstorysec_bg_grey2 "></span></div><div class="ourstorysec_space10"></div><p>3:30 PM</p></div></div>';
 
     var marker_2_options = {
          content: boxText_2
@@ -311,11 +318,16 @@ function initialize() {
     };
 
   var info_box_2 = new InfoBox(marker_2_options);
+  var positionpin_4 = new google.maps.LatLng(40.908550, -74.722759);
+    
     
     google.maps.event.addListener(marker_2, 'click', function() {
         info_box_2.open(map,marker_2);
+        display_route();
     });
     
+    
+
     info_box_2.open(map,marker_2);
     //end 2
     
@@ -326,7 +338,6 @@ function initialize() {
     
     //marker
     var image_4 = new google.maps.MarkerImage("img/icons/marker-hotel.png", null, null, null, new google.maps.Size(33,50));
-    var positionpin_4 = new google.maps.LatLng(41.068637, -74.749627);
     var marker_4 = new google.maps.Marker({
       position: positionpin_4,
       icon: image_4,
@@ -337,13 +348,13 @@ function initialize() {
 
     //box
     var boxText = document.createElement("div");
-    boxText.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/hotel.png"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing  ourstorysec_paddingright30 ourstorysec_bg_white"><h4><strong>Hotel</strong></h4><div class="ourstorysec_space20"></div><h5>Holiday Inn &amp; Suites Newton Sparta</h5><div class="ourstorysec_space20"></div><div class="ourstorysec_divider center small"><span class="ourstorysec_bg_grey2 "></span></div><div class="ourstorysec_space20"></div><p><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></p></div></div>';
+    boxText.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/hotel.png"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing  ourstorysec_paddingleft30 ourstorysec_bg_white"><h4><strong>Hotel</strong></h4><div class="ourstorysec_space10"></div><h5>Residence Inn Mt. Olive</h5><div class="ourstorysec_space10"></div><div class="ourstorysec_divider center small"><span class="ourstorysec_bg_grey2 "></span></div><div class="ourstorysec_space10"><br><a style="font-size: 14px; font-weight:bold" target="_blank" href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Terracciano%20Waye%20Wedding%5Ecdwri%60TWWTWWA%7CTWWTWWB%7CTWWTWWC%60159.95-299.95%60USD%60false%605%606/23/18%606/25/18%605/24/18&app=resvlink&stop_mobi=yes">Make Reservation</a></div><p><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></p></div></div>';
 
     var marker_4_options = {
          content: boxText
         ,disableAutoPan: false
         ,maxWidth: 0
-        ,pixelOffset: new google.maps.Size(40, -90)
+        ,pixelOffset: new google.maps.Size(40, -170)
         ,zIndex: null
         ,boxStyle: { 
           opacity: 1,
@@ -362,6 +373,7 @@ function initialize() {
     
     google.maps.event.addListener(marker_4, 'click', function() {
         info_box_4.open(map,marker_4);
+        display_route();
     });
     
     info_box_4.open(map,marker_4);
@@ -372,9 +384,9 @@ function initialize() {
     
     //marker
     var image_4 = new google.maps.MarkerImage("img/icons/marker-hotel.png", null, null, null, new google.maps.Size(33,50));
-    var positionpin_4 = new google.maps.LatLng(40.689208, -74.178739);
+    var positionpin_5 = new google.maps.LatLng(40.689208, -74.178739);
     var marker_4 = new google.maps.Marker({
-      position: positionpin_4,
+      position: positionpin_5,
       icon: image_4,
       map: map,
       flat: true
@@ -383,7 +395,7 @@ function initialize() {
 
     //box
     var boxText = document.createElement("div");
-    boxText.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/newark.jpeg"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing  ourstorysec_paddingright30 ourstorysec_bg_white"><h4><strong>Airport</strong></h4><div class="ourstorysec_space20"></div><h5>Newark Airort (EWR)</h5><div class="ourstorysec_space20"></div><div class="ourstorysec_divider center small"><span class="ourstorysec_bg_grey2 "></span></div><div class="ourstorysec_space20"></div><p><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></p></div></div>';
+    boxText.innerHTML = '<div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><img class="ourstorysec_focus ourstorysec_border_white" src="img/newark.jpeg"></div><div class="ourstorysec_displaynone_iphoneland ourstorysec_displaynone_iphonepotr grid grid_6 percentage ourstorysec_border_white"><div class="ourstorysec_focus center ourstorysec_sizing  ourstorysec_paddingright30 ourstorysec_bg_white"><h4><strong>Airport</strong></h4><div class="ourstorysec_space20"></div><h5>Newark Airort (EWR)</h5><div class="ourstorysec_space20"></div><div class="ourstorysec_space20"></div><p><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></p></div></div>';
 
     var marker_4_options = {
          content: boxText
@@ -414,11 +426,8 @@ function initialize() {
     //end 4
     
     var start = new google.maps.LatLng(40.689208, -74.178739);
-    var end = new google.maps.LatLng(41.068637, -74.749627);
-    var directionsService = new google.maps.DirectionsService;
-    var directionsDisplay = new google.maps.DirectionsRenderer({
-      suppressMarkers: true});
-    directionsDisplay.setMap(map);
+    var end = new google.maps.LatLng(40.908550, -74.722759);
+    
     directionsService.route({
       origin: start,
       destination: end,
@@ -428,7 +437,7 @@ function initialize() {
     }, function(response, status) {
       if (status === 'OK') {
         //directionsDisplay.setDirections(response);
-        var inBetween = google.maps.geometry.spherical.interpolate(start, end, 0.5);  
+        var inBetween = google.maps.geometry.spherical.interpolate(start, end, 0.53);  
         var midPointMarker = new google.maps.Marker({  
             position: inBetween,  
             map: map,
@@ -457,9 +466,7 @@ function initialize() {
 
         stuLabel.bindTo('position', midPointMarker, 'position');
         stuLabel.set('text', "<h4>" + stuDistance.miles + ' miles \n (' + myRoute.duration.text + ')</h4>');
-        console.log(stuDistance);
-        console.log(response);
-
+        
         // lets add event listeners
         google.maps.event.addListener(polyline, 'mouseover', function() {
             stuLabel.setMap(map);
@@ -470,11 +477,80 @@ function initialize() {
         });
         //directionsDisplay.setPanel(document.getElementById("directions-panel"));
       } else {
-        window.alert('Directions request failed due to ' + status);
+        //window.alert('Directions request failed due to ' + status);
       }
     });
 
+    function display_route() {
+
+        directionsService.route({
+          origin: nj,
+          destination: positionpin_4,
+          waypoints: [],
+          optimizeWaypoints: true,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            //directionsDisplay.setDirections(response);
+            var inBetween = google.maps.geometry.spherical.interpolate(nj, positionpin_4, 0.3);  
+            var midPointMarker = new google.maps.Marker({  
+                position: inBetween,  
+                map: map,
+                visible: false  // NB the marker is 'invisible'
+            });
+            map.panTo(inBetween);
+            map.setZoom(12);
+            //map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+
+            var myRoute = response.routes[0].legs[0];
+            var points = []
+            for (var i = 0; i < myRoute.steps.length; i++) {
+                for (var j = 0; j < myRoute.steps[i].lat_lngs.length; j++) {
+                    points.push(myRoute.steps[i].lat_lngs[j]);
+                }
+            }
+
+            polyline = new google.maps.Polyline({
+                path: points,
+                strokeColor: "#333",
+                strokeOpacity: 0.5,
+                strokeWeight: 6,
+                geodesic: true,
+                map: map
+            });
+
+            var stuDistance = calculateDistances(nj, positionpin_4);
+            var stuLabel = new Label();
+
+            stuLabel.bindTo('position', midPointMarker, 'position');
+            stuLabel.set('text', "<strong>" + stuDistance.miles + ' miles \n (' + myRoute.duration.text + ')</strong>');
+            
+            // lets add event listeners
+            google.maps.event.addListener(polyline, 'mouseover', function() {
+                stuLabel.setMap(map);
+            });
+
+            google.maps.event.addListener(polyline, 'mouseout', function() {
+                stuLabel.setMap(null);
+            });
+            stuLabel.setMap(map);
+
+
+          google.maps.event.addListener(map, 'click', function() {
+              map.panTo(nj);
+              map.setZoom(10)
+
+          });
+            //directionsDisplay.setPanel(document.getElementById("directions-panel"));
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+    }
+
 }
+
+
 
 function calculateDistances(start,end) {
     var stuDistances = {};
