@@ -1782,7 +1782,10 @@ z-index: 2;
     text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 0px; 
 }
 
-
+#ourstory {
+  background: url('../img/ourstory3.jpg') 40% 98px / cover fixed; 
+  min-height:750px;
+}
 #ourstory p {
   font-family: 'Halant';
 }
