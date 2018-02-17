@@ -623,16 +623,127 @@ Label.prototype.draw = function() {
 google.maps.event.addDomListener(window, 'load', initialize);
 //END GOOGLE MAPS    
 
-
-    $('#rsvp-form').submit(function(e) {
-        $('#response-phase1').fadeOut('fast', function() {
-          $('#response-phase-loading').fadeIn('fast', function() {
-            $('#response-phase-loading').fadeOut('fast', function() {
-              $('#response-phase2').fadeIn('fast', function() {
-
-              });
-            });
-          });
+function handle_group_name(e) {
+  var name = e.target[0].value;
+  $.get('http://localhost:5000/group_names?name=' + name, function(res) {
+    if (res.groups.length > 0) {
+      for (var i in res.groups) {
+        $('#response-phase2-namefound').append('<p><a href="#" data-groupname="' + 
+          res.groups[i].id + '" class="group-select">' + 
+          res.groups[i].name + '</a></p>');
+      }
+      $('.group-select').click(function(e) {
+        $('#response-phase2-namefound').fadeOut('slow', function() {
+          handle_group_select(e);
         });
         return false;
+      });
+      $('#response-phase2-namefound').fadeIn('fast');  
+    } else {
+      $('#response-phase2-namenotfound').fadeIn('fast');
+    }
+
+  });
+}
+
+$('#rsvp-form').submit(function(e) {
+    $('#response-phase1').fadeOut('fast', function() {
+      $('#response-phase-loading').fadeIn('fast', function() {
+        $('#response-phase-loading').fadeOut('fast', function() {
+          handle_group_name(e);
+        });
+      });
     });
+    return false;
+});
+
+
+$('#rsvp-form-notfound').submit(function(e) {
+    $('#response-phase2-namenotfound').fadeOut('fast', function() {
+      $('#response-phase-loading').fadeIn('fast', function() {
+        $('#response-phase-loading').fadeOut('fast', function() {
+          handle_group_name(e);
+        });
+      });
+    });
+    return false;
+});
+var groupname;
+
+function handle_group_select(e) {
+  groupname = $(e.target).data('groupname');
+  $('#response-phase3-groupselected').fadeIn('fast');
+}
+
+function handle_rsvp_yesno(e) {
+  var rsvp = e.target['rsvp'].value;
+  if (rsvp == 'no') {
+    $('#response-phase-loading').fadeOut('fast', function() {
+      $.get('http://localhost:5000/rsvp?id=' + groupname + '&is_coming=no', function() {
+        $('#response-phase4-rsvpno').fadeIn('fast');
+      });
+    });
+  } else if (rsvp == 'yes') {
+    $('#response-phase-loading').fadeOut('fast', function() {
+      $.get('http://localhost:5000/party_members?id=' + groupname, function(res) {
+        $('#response-phase4-rsvpyes').fadeIn('fast', function() {
+          if (res.unnamed_guest) {
+            $('#rsvp-with-guests-unknown-names').fadeIn('fast');
+          } else if (res.members.length > 0) {
+            for (var j = 0; j < res.members.length; j++) {
+              $('#rsvp-with-guests-known-names-opts').append('<p class="white"><label><input type="checkbox" name="coming[]" class="form-coming" value="' + res.members[j] + '">  ' + res.members[j] + '</label></p>');
+            }
+            $('#rsvp-with-guests-known-names').fadeIn('fast');
+          }
+          $('#rsvp-common').fadeIn('fast');
+        });  
+      });
+    });
+  }
+}
+
+$('#rsvp-form-groupselected').submit(function(e) {
+    $('#response-phase3-groupselected').fadeOut('fast', function() {
+      $('#response-phase-loading').fadeIn('slow', function() {
+        handle_rsvp_yesno(e);
+      });
+    });
+    return false;
+});
+
+function handle_rsvp_finish(e) {
+  $('#response-phase-loading').fadeOut('fast', function() {
+    coming = ''
+    guest_name = encodeURIComponent(e.target['unnamed_guest'].value);
+    if (e.target['coming[]']) {
+      coming = $(".form-coming:checked").map(function(){
+        return $(this).val();
+      }).get().join(',');
+    } else {
+      coming = guest_name;
+    }
+    diet = encodeURIComponent(e.target['diet'].value);
+    need_transportation = e.target['need_transportation'].value;
+    after_party = e.target['after_party'].value;
+    comments = encodeURIComponent(e.target['comments'].value);
+    $.get('http://localhost:5000/rsvp?id=' + groupname + 
+      '&is_coming=yes' +
+      '&guest_name=' + guest_name +
+      '&needs_transporation=' + need_transportation +
+      '&dietary_restrictions=' + diet +
+      '&going_to_after_party=' + after_party +
+      '&comments=' + comments + 
+      '&guests_coming=' + coming);
+    $('#response-phase5').fadeIn('fast');
+  });
+}
+
+$('#rsvp-form-phase4').submit(function(e) {
+  $('#response-phase4-rsvpyes').fadeOut('fast', function () {
+    $('#response-phase-loading').fadeIn('slow', function() {
+      handle_rsvp_finish(e);
+    });
+  });
+  return false;
+});
+

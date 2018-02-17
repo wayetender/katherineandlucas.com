@@ -414,28 +414,107 @@
               <p class="white center" style="text-align: center; font-weight: bold">Tell us if you're coming!</p>
 
 
-          <div class="ourstorysec_space50"></div>
-          <div id="response-phase2" class="grid grid_12 centered" style="display: block">
-            <p class='white'>Here you will be able to RSVP once we send out invites.</p>
+          <div class="ourstorysec_space40"></div>
 
-         <!--  <form id="rsvp-form">
-            <div id="response-phase1" class="grid grid_12 centered">
-            <input style="width:300px; display:inline" placeholder="Enter your name" type="input" class="form-control" id="name">
-            <button type="submit" class="btn btn-default">Lookup Inivitation</button>
-            </div>
-            <div id="response-phase-loading" class="grid grid_12 centered" style="display:none">
+
+          <div id="response-phase-loading" class="grid grid_12 centered" style="display:none">
             <img src="img/loading.gif" width="40px">
-            </div>
-            <div id="response-phase2" class="grid grid_12 centered" style="display: none">
-            <p class='white'>coming soon...</p>
-            </div>
-            </div>
-          </form> -->
+          </div>
 
+          <form id="rsvp-form">
+            <div id="response-phase1" class="grid grid_12 centered">
+            <input style="width:300px; display:inline" placeholder="Enter your last name..." type="input" class="form-control" id="name">
+            <button type="submit" class="btn btn-default">Lookup Invitation</button>
+            </div>
+          </form>
+          <form id="rsvp-form-notfound">
+            <div id="response-phase2-namenotfound" class="grid grid_12 centered" style="display: none">
+            <p class='white'>We're sorry, we couldn't find your last name. Please try 
+            entering your name again. If you're still having trouble, please contact us to let us know!</p>
+            <input style="width:300px; display:inline" placeholder="Enter your last name..." type="input" class="form-control" id="name">
+            <button type="submit" class="btn btn-default">Lookup Invitation</button>
+            </div>
+          </form>
+
+
+          <form id="rsvp-form-namefound">
+            <div id="response-phase2-namefound" class="grid grid_12 centered" style="display: none">
+            <p class='white'>Please select your name from below. If you don't see your name, please contact us to let us know!</p>
+            </div>
+          </form>
+
+
+
+          <form id="rsvp-form-groupselected">
+            <div id="response-phase3-groupselected" class="grid grid_12 centered" style="display: none">
+              <div style="text-align:left; margin-left:42%">
+
+              <p class='white'>Will you be attending?</p>
+              <p class="white"><label><input type="radio" name="rsvp" value="yes">  Yes!</label></p>
+              <p class="white"><label><input type="radio" name="rsvp" value="no">  Regrettably Not</label></p>
+              <br>
+              </div>
+              <button type="submit" class="btn btn-default">Next &raquo;</button>
+            </div>
+          </form>
+
+          <form id="rsvp-form-phase4">
+          
+          <div id="response-phase4-rsvpyes" class="grid grid_12 centered" style="display: none">
+           
+            <div id="rsvp-with-guests-unknown-names"  style="display:none">
+              <p class="white">Are you bringing a guest? If so, what is their name (or just put "no" if you're not bringing a guest)?
+                <br>
+                <input style="width:300px; display:inline" placeholder="Enter your guest's full name or just &quot;no&quot;" type="input" name="unnamed_guest" class="form-control" id="guest">
+            </div>
+            <div id="rsvp-with-guests-known-names"  style="display:none">
+                <div id="rsvp-with-guests-known-names-opts" style="text-align:left; margin-left:22%">
+
+                <p class='white'>Who from your party is coming?</p>
+              
+            </div>
+
+            </div>
+             <div id="rsvp-common" style="display:none">
+              <p class="white">Do you have any special dietary requirements?
+                <br>
+                <input style="width:500px; display:inline" placeholder="Enter any dietary restrictions you might have, or just put &quot;none&quot;" type="input" class="form-control" id="diet" name="diet">
+              <div style="text-align:left; margin-left:22%">
+
+              <p class='white'>Will you be staying at the Residence Inn (or a nearby hotel) and
+                want transportation to/from the venue?</p>
+              <p class="white"><label><input type="radio" name="need_transportation" value="Yes">  Yes, please!</label></p>
+              <p class="white"><label><input type="radio" name="need_transportation" value="No">  No thanks &mdash; we'll be driving (or finding alternative transportation).</label></p>
+            </div>
+             <div style="text-align:left; margin-left:22%">
+
+              <p class='white'>Will you be attending the after party?</p>
+              <p class="white"><label><input type="radio" name="after_party" value="Yes">  Definitely!</label></p>
+              <p class="white"><label><input type="radio" name="after_party" value="Maybe">  Maybe</label></p>
+              <p class="white"><label><input type="radio" name="after_party" value="No">  No thanks &mdash; 10pm is past my bed time.</label></p>
+            </div>
+
+             <p class="white">Do you have a favorite song you want to hear or any other special requests?
+              <br>
+                <input style="width:500px; display:inline" placeholder="Enter any comments or special requests" type="input" name="comments" class="form-control" id="comments">
+                <br><br>
+            <button type="submit" class="btn btn-default">Complete RSVP</button>
+            </div>
+            </p>
+          </div>
+          </form>
+
+          <div id="response-phase4-rsvpno" class="grid grid_12 centered" style="display: none">
+            <p class='white'>We're sorry to hear you can't come. Thank you for letting us know, though!
+            </p>
           </div>
 
 
-          <div class="ourstorysec_space20"></div>
+          <div id="response-phase5" class="grid grid_12 centered" style="display: none">
+            <p class='white'>Thanks so much for sending us your RSVP. We can't wait to see you!
+            </p>
+          </div>
+
 
      </div>
      <!--end ourstorysec_container-->
