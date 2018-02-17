@@ -625,7 +625,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 function handle_group_name(e) {
   var name = e.target[0].value;
-  $.get('http://localhost:5000/group_names?name=' + name, function(res) {
+  $.get('https://katherineandlucas-rsvp.herokuapp.com/group_names?name=' + name, function(res) {
     if (res.groups.length > 0) {
       for (var i in res.groups) {
         $('#response-phase2-namefound').append('<p><a href="#" data-groupname="' + 
@@ -679,13 +679,13 @@ function handle_rsvp_yesno(e) {
   var rsvp = e.target['rsvp'].value;
   if (rsvp == 'no') {
     $('#response-phase-loading').fadeOut('fast', function() {
-      $.get('http://localhost:5000/rsvp?id=' + groupname + '&is_coming=no', function() {
+      $.get('https://katherineandlucas-rsvp.herokuapp.com/rsvp?id=' + groupname + '&is_coming=no', function() {
         $('#response-phase4-rsvpno').fadeIn('fast');
       });
     });
   } else if (rsvp == 'yes') {
     $('#response-phase-loading').fadeOut('fast', function() {
-      $.get('http://localhost:5000/party_members?id=' + groupname, function(res) {
+      $.get('https://katherineandlucas-rsvp.herokuapp.com/party_members?id=' + groupname, function(res) {
         $('#response-phase4-rsvpyes').fadeIn('fast', function() {
           if (res.unnamed_guest) {
             $('#rsvp-with-guests-unknown-names').fadeIn('fast');
@@ -726,7 +726,7 @@ function handle_rsvp_finish(e) {
     need_transportation = e.target['need_transportation'].value;
     after_party = e.target['after_party'].value;
     comments = encodeURIComponent(e.target['comments'].value);
-    $.get('http://localhost:5000/rsvp?id=' + groupname + 
+    $.get('https://katherineandlucas-rsvp.herokuapp.com/rsvp?id=' + groupname + 
       '&is_coming=yes' +
       '&guest_name=' + guest_name +
       '&needs_transporation=' + need_transportation +
