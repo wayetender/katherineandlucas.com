@@ -626,6 +626,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 function handle_group_name(e) {
   var name = e.target[0].value;
   $.get('https://katherineandlucas-rsvp.herokuapp.com/group_names?name=' + name, function(res) {
+    $('#response-phase-loading').fadeOut('fast', function() {
     if (res.groups.length > 0) {
       for (var i in res.groups) {
         $('#response-phase2-namefound').append('<p><a href="#" data-groupname="' + 
@@ -642,16 +643,14 @@ function handle_group_name(e) {
     } else {
       $('#response-phase2-namenotfound').fadeIn('fast');
     }
-
+  });
   });
 }
 
 $('#rsvp-form').submit(function(e) {
     $('#response-phase1').fadeOut('fast', function() {
       $('#response-phase-loading').fadeIn('fast', function() {
-        $('#response-phase-loading').fadeOut('fast', function() {
-          handle_group_name(e);
-        });
+        handle_group_name(e);
       });
     });
     return false;
@@ -661,9 +660,7 @@ $('#rsvp-form').submit(function(e) {
 $('#rsvp-form-notfound').submit(function(e) {
     $('#response-phase2-namenotfound').fadeOut('fast', function() {
       $('#response-phase-loading').fadeIn('fast', function() {
-        $('#response-phase-loading').fadeOut('fast', function() {
-          handle_group_name(e);
-        });
+        handle_group_name(e);
       });
     });
     return false;
