@@ -1935,7 +1935,7 @@ z-index: 2;
     padding:10px;
   }
   .form-control {
-    width:200px !important;
+    width:250px !important;
   }
   .intro-content h1 {
     font-size: 60px !important;
@@ -2005,6 +2005,15 @@ z-index: 2;
   }
   h1 {
     font-size: 25px !important;
+  }
+  #response-phase3-groupselected div {
+    margin-left: 15% !important;
+  }
+  #response-phase4-rsvpyes div {
+    margin-left: 0% !important;
+  }
+  #response-phase5 {
+    margin-top: 50%;
   }
 }
 

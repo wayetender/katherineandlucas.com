@@ -677,6 +677,7 @@ function handle_group_select(e) {
 
 function handle_rsvp_yesno(e) {
   var rsvp = e.target['rsvp'].value;
+  if (!rsvp) return false;
   if (rsvp == 'no') {
     $('#response-phase-loading').fadeOut('fast', function() {
       $.get('https://katherineandlucas-rsvp.herokuapp.com/rsvp?id=' + groupname + '&is_coming=no', function() {
@@ -700,12 +701,14 @@ function handle_rsvp_yesno(e) {
       });
     });
   }
+  return true;
 }
 
 $('#rsvp-form-groupselected').submit(function(e) {
+    if (!e.target['rsvp'].value) return false;
     $('#response-phase3-groupselected').fadeOut('fast', function() {
       $('#response-phase-loading').fadeIn('slow', function() {
-        handle_rsvp_yesno(e);
+        handle_rsvp_yesno(e)
       });
     });
     return false;
@@ -739,6 +742,8 @@ function handle_rsvp_finish(e) {
 }
 
 $('#rsvp-form-phase4').submit(function(e) {
+  if (!e.target['need_transportation'].value || !e.target['after_party'].value)
+    return false;
   $('#response-phase4-rsvpyes').fadeOut('fast', function () {
     $('#response-phase-loading').fadeIn('slow', function() {
       handle_rsvp_finish(e);
