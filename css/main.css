@@ -1867,8 +1867,8 @@ z-index: 2;
 }
 
 #rsvp {
-  background: url('../img/katherine1.jpg') 50% 40px / cover fixed; 
-  min-height:700px;
+  background: url('../img/katherine1.jpg') no-repeat 50% fixed / cover; 
+  min-height:500px;
   z-index: 0;
 
 }
@@ -1876,7 +1876,7 @@ z-index: 2;
   z-index: 2;
 }
 
-@media screen and (min-width:800px) and (max-width: 1200px) {
+@media screen and (min-width:800px) and (max-width: 1100px) {
   section.header {
     background-color: #444;
   }
